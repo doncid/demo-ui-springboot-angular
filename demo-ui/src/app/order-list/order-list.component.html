@@ -1,0 +1,39 @@
+<div>
+  <div>
+    <h3>Order List</h3>
+  </div>
+  <div class="panel-body">
+    <table>
+      <thead>
+        <tr>
+          <th>OrderID</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Grade</th>
+          <th>Address1</th>
+          <th>Address2</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders | async">
+          <td>{{order.id}}</td>
+          <td>{{order.firstName}}</td>
+          <td>{{order.lastName}}</td>
+          <td>{{order.grade}}</td>
+          <td>{{order.address1}}</td>
+          <td>{{order.address2}}</td>
+          <td>{{order.city}}</td>
+          <td>{{order.state}}</td>
+          <td>{{order.zip}}</td>
+          <td><button (click)="deleteOrder(order.id)">Delete</button>
+              <button (click)="orderDetails(order.id)" style="margin-left: 8px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
